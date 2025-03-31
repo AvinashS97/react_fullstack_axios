@@ -16,8 +16,8 @@ export const Movie = () => {
 
     useEffect(()=> {
         getMovieData();
-    },[])
+    },[]);
 
     return <h1> Movie Page</h1>
 
-}
+};
