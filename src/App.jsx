@@ -1,19 +1,14 @@
 // import { Movie } from "./pages/Movie";
-import { useEffect } from "react";
-import { getPost } from "./api/Postapi";
+import { Posts } from "./components/Posts";
 
 
 const App = () => {
-  const getPostData = async() => {
-    const res = await getPost();
-    console.log(res);
-  }
+  return (
+    <section className="main-section"> 
+      < Posts/>
+    </section>
+  ) 
 
-  useEffect(()=> {
-    getPostData();
-  })
-
-  return <h1>  Hello React CRUD Operation </h1>
 };
 
 export default App;
