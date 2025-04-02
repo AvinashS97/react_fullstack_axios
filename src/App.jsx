@@ -1,5 +1,6 @@
 // import { Movie } from "./pages/Movie";
 import { Posts } from "./components/Posts";
+import "./App.css";
 
 
 const App = () => {
