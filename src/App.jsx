@@ -1,4 +1,3 @@
-// import { Movie } from "./pages/Movie";
 import { Posts } from "./components/Posts";
 
 
