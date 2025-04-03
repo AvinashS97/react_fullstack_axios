@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react'
-import { deletePost, getPost } from '../api/Postapi'
-import '../App.css'
-import { Form } from './Form'
+import { useEffect, useState } from 'react';
+import { deletePost, getPost } from '../api/Postapi';
+import '../App.css';
+import { Form } from './Form';
 
 export const Posts = () => {
-  const [data, setData] = useState([])
-  const [updateDataApi, setUpdateDataApi] = useState({})
+  const [data, setData] = useState([]);
+  const [updateDataApi, setUpdateDataApi] = useState({});
 
   const getPostData = async () => {
-    const res = await getPost()
-    console.log(res.data)
-    setData(res.data)
-  }
+    const res = await getPost();
+    console.log(res.data);
+    setData(res.data);
+  };
 
   useEffect(() => {
     getPostData()
-  }, [])
+  }, []);
 
   // Function to Delete Post
 
@@ -24,16 +24,16 @@ export const Posts = () => {
       const res = await deletePost(id)
       if (res.status === 200) {
         const newUpdatedPosts = data.filter(curPost => {
-          return curPost.id !== id
-        })
+          return curPost.id !== id;
+        });
         setData(newUpdatedPosts)
       } else {
         console.log('Failed to delete the post:', res.status)
       }
     } catch (error) {
       console.log(error)
-    }
-  }
+    };
+  };
 
   // Function to Edit Post
 
