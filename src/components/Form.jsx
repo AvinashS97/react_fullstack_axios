@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import { postData, updateData } from '../api/Postapi'
+import { useEffect, useState } from 'react';
+import { postData, updateData } from '../api/Postapi';
 
 export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
   const [addData, setAddData] = useState({
     title: '',
     body: ''
-  })
+  });
 
-  let isEmpty = Object.keys(updateDataApi).length === 0
+  let isEmpty = Object.keys(updateDataApi).length === 0;
 
   //   get the udpated Data and add into input field
   useEffect(() => {
@@ -15,7 +15,7 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
       setAddData({
         title: updateDataApi.title || '',
         body: updateDataApi.body || ''
-      })
+      });
   }, [updateDataApi])
 
   const handleInputChange = e => {
@@ -61,7 +61,7 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
     }
   }
 
-  //   form submission
+  //   Form Submission
   const handleFormSubmit = e => {
     e.preventDefault()
     const action = e.nativeEvent.submitter.value
@@ -69,8 +69,8 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
       addPostData()
     } else if (action === 'Edit') {
       updatePostData()
-    }
-  }
+    };
+  };
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -103,5 +103,5 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
         {isEmpty ? 'Add' : 'Edit'}
       </button>
     </form>
-  )
-}
+  );
+};
