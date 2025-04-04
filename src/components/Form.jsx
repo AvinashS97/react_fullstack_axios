@@ -58,10 +58,11 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
       }
     } catch ({ error }) {
       console.log(error)
-    }
-  }
+    };
+  };
 
   //   Form Submission
+  
   const handleFormSubmit = e => {
     e.preventDefault()
     const action = e.nativeEvent.submitter.value
