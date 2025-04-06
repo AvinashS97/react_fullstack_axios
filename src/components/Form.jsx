@@ -16,7 +16,7 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
         title: updateDataApi.title || '',
         body: updateDataApi.body || ''
       });
-  }, [updateDataApi])
+  }, [updateDataApi]);
 
   const handleInputChange = e => {
     const name = e.target.name
@@ -27,8 +27,8 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
         ...prev,
         [name]: value
       }
-    })
-  }
+    });
+  };
 
   const addPostData = async () => {
     const res = await postData(addData)
