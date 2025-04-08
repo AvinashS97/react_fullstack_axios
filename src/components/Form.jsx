@@ -5,8 +5,8 @@ import { postData, updateData } from '../api/Postapi';
 
 export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
   const [addData, setAddData] = useState({
-    title: '',
-    body: ''
+    title: "",
+    body: ""
   });
 
   let isEmpty = Object.keys(updateDataApi).length === 0;
@@ -24,11 +24,11 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
     const name = e.target.name
     const value = e.target.value
 
-    setAddData(prev => {
+    setAddData((prev) => {
       return {
         ...prev,
-        [name]: value
-      }
+        [name]: value,
+      };
     });
   };
 
