@@ -35,7 +35,7 @@ export const Posts = () => {
     };
   };
 
-  // Function to Edit Post
+  // Function to Edit / Update Post
 
   const handleUpdatePost = curElem => setUpdateDataApi(curElem)
 

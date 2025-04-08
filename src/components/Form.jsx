@@ -5,13 +5,14 @@ import { postData, updateData } from '../api/Postapi';
 
 export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
   const [addData, setAddData] = useState({
-    title: "",
-    body: ""
+    title: '',
+    body: ''
   });
 
   let isEmpty = Object.keys(updateDataApi).length === 0;
 
   //   get the udpated Data and add into input field
+  
   useEffect(() => {
     updateDataApi &&
       setAddData({
@@ -20,9 +21,9 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
       });
   }, [updateDataApi]);
 
-  const handleInputChange = e => {
-    const name = e.target.name
-    const value = e.target.value
+  const handleInputChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
     setAddData((prev) => {
       return {
@@ -34,44 +35,44 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
 
   const addPostData = async () => {
     const res = await postData(addData)
-    console.log('res', res)
+    console.log('res', res);
 
     if (res.status === 201) {
-      setData([...data, res.data])
-      setAddData({ title: '', body: '' })
-    }
-  }
+      setData([...data, res.data]);
+      setAddData({ title: '', body: '' });
+    };
+  };
 
   //   updatePostData
   const updatePostData = async () => {
     try {
-      const res = await updateData(updateDataApi.id, addData)
-      console.log(res)
+      const res = await updateData(updateDataApi.id, addData);
+      console.log(res);
 
       if (res.status === 200) {
         setData(prev => {
           return prev.map(curElem => {
             return curElem.id === res.data.id ? res.data : curElem
-          })
-        })
+          });
+        });
 
-        setAddData({ title: '', body: '' })
-        setUpdateDataApi({})
-      }
+        setAddData({ title: '', body: '' });
+        setUpdateDataApi({});
+      };
     } catch ({ error }) {
-      console.log(error)
+      console.log(error);
     };
   };
 
   //   Form Submission
-  
+
   const handleFormSubmit = e => {
     e.preventDefault()
-    const action = e.nativeEvent.submitter.value
+    const action = e.nativeEvent.submitter.value;
     if (action === 'Add') {
-      addPostData()
+      addPostData();
     } else if (action === 'Edit') {
-      updatePostData()
+      updatePostData();
     };
   };
 
