@@ -5,8 +5,8 @@ import { postData, updateData } from '../api/Postapi';
 
 export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
   const [addData, setAddData] = useState({
-    title: '',
-    body: ''
+    title: "",
+    body: ""
   });
 
   let isEmpty = Object.keys(updateDataApi).length === 0;
