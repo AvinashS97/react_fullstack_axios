@@ -14,7 +14,7 @@ export const Posts = () => {
   };
 
   useEffect(() => {
-    getPostData()
+    getPostData();
   }, []);
 
   // Function to Delete Post
@@ -31,13 +31,13 @@ export const Posts = () => {
         console.log('Failed to delete the post:', res.status);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     };
   };
 
   // Function to Edit / Update Post
 
-  const handleUpdatePost = curElem => setUpdateDataApi(curElem)
+  const handleUpdatePost = curElem => setUpdateDataApi(curElem);
 
   return (
     <>
@@ -65,8 +65,8 @@ export const Posts = () => {
                   Delete
                 </button>
               </li>
-            )
-          })}
+            );
+          })};
         </ol>
       </section>
     </>

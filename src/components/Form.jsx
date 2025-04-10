@@ -51,7 +51,7 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
 
       if (res.status === 200) {
         setData(prev => {
-          return prev.map(curElem => {
+          return prev.map((curElem) => {
             return curElem.id === res.data.id ? res.data : curElem
           });
         });
@@ -66,8 +66,8 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
 
   //   Form Submission
 
-  const handleFormSubmit = e => {
-    e.preventDefault()
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
     const action = e.nativeEvent.submitter.value;
     if (action === 'Add') {
       addPostData();
