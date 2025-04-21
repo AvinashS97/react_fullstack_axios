@@ -5,7 +5,6 @@ const api = axios.create({
 });
 
 // Get Method
-
 export const getPost = () => {
   return api.get('/posts');
 };
